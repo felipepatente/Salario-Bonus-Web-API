@@ -9,7 +9,7 @@ namespace SalarioBonusAPI.Data
 {
     public class SalarioContext: DbContext
     {
-        public readonly DbSet<SalarioBonusVendedor> SalarioBonusVendedor;
+        public readonly DbSet<SalarioVendedor> SalarioVendedor;
 
         public SalarioContext(DbContextOptions<SalarioContext> options): base(options)
         {
@@ -18,15 +18,15 @@ namespace SalarioBonusAPI.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SalarioBonusVendedor>()
+            modelBuilder.Entity<SalarioVendedor>()
                 .Property(s => s.SalarioFixo)
                 .HasColumnType("Decimal(10,5)");
 
-            modelBuilder.Entity<SalarioBonusVendedor>()
+            modelBuilder.Entity<SalarioVendedor>()
                .Property(s => s.TotalVendas)
                .HasColumnType("Decimal(10,5)");
 
-            modelBuilder.Entity<SalarioBonusVendedor>()
+            modelBuilder.Entity<SalarioVendedor>()
                 .Property(s => s.SalarioReceber)
                 .HasColumnType("Decimal(10,5)");
         }
