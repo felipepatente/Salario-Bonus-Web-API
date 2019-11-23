@@ -12,7 +12,7 @@ namespace SalarioBonusAPI.Servicos
 
         public decimal GetSalarioLiquido(SalarioVendedor salario)
         {
-            return (salario.TotalVendas * comissao) + salario.SalarioFixo;
+            return (salario.ValorTotalVendas * comissao) + salario.SalarioFixo;
         }
     }
 }

@@ -27,12 +27,14 @@ namespace SalarioBonusAPI.Servicos
 
             return salario;
         }
-        
-        public IList<SalarioVendedor> GetSalarioVendedores()
-        {
-            return context.SalarioVendedor.ToList();
-        }
 
+        public IList<SalarioVendedor> GetSalarioVendedores()
+        {            
+            var salarios = context.SalarioVendedor.ToList();
+
+            return salarios;
+        }
+        
         public IList<SalarioVendedor> RemoverSalario(int id)
         {
             var salario = context.SalarioVendedor.SingleOrDefault(s => s.ID == id);

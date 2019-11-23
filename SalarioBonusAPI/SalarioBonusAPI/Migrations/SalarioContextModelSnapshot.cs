@@ -30,7 +30,7 @@ namespace SalarioBonusAPI.Migrations
                     b.Property<decimal>("SalarioReceber")
                         .HasColumnType("Decimal(10,5)");
 
-                    b.Property<decimal>("TotalVendas")
+                    b.Property<decimal>("ValorTotalVendas")
                         .HasColumnType("Decimal(10,5)");
 
                     b.Property<string>("Vendedor");

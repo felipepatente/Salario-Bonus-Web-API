@@ -9,8 +9,8 @@ using SalarioBonusAPI.Data;
 namespace SalarioBonusAPI.Migrations
 {
     [DbContext(typeof(SalarioContext))]
-    [Migration("20191123145935_MudandoNomeTabela")]
-    partial class MudandoNomeTabela
+    [Migration("20191123162202_IncialTables")]
+    partial class IncialTables
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,7 +32,7 @@ namespace SalarioBonusAPI.Migrations
                     b.Property<decimal>("SalarioReceber")
                         .HasColumnType("Decimal(10,5)");
 
-                    b.Property<decimal>("TotalVendas")
+                    b.Property<decimal>("ValorTotalVendas")
                         .HasColumnType("Decimal(10,5)");
 
                     b.Property<string>("Vendedor");

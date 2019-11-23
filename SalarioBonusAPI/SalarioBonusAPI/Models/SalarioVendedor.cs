@@ -52,7 +52,7 @@ namespace SalarioBonusAPI.Models
             }
         }
 
-        public decimal TotalVendas
+        public decimal ValorTotalVendas
         {
             set
             {

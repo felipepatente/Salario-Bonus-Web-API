@@ -19,22 +19,28 @@ namespace SalarioBonusAPI.Controllers
         public SalarioController(SalarioContext context)
         {
             this.context = context;
-            this.gerenciarSalario = new GerenciarSalario(context);
+            gerenciarSalario = new GerenciarSalario(context);
         }
 
         [HttpPost]
         public ActionResult<string> Post([FromBody]SalarioVendedor salarioLiquido)
         {
             SalarioVendedor salario = gerenciarSalario.AdicionarSalario(salarioLiquido);
-            IList<SalarioVendedor> salarios = gerenciarSalario.GetSalarioVendedores();
-
-            return Ok(salarios);
+            
+            return Ok(salario);
         }
 
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return Ok(gerenciarSalario.GetSalarioVendedores());
+            var salariosVendedores = gerenciarSalario.GetSalarioVendedores();
+
+            if (salariosVendedores == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(salariosVendedores);
         }
 
         [HttpGet("{id}")]
